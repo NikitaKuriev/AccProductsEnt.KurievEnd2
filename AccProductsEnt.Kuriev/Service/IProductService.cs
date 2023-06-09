@@ -7,14 +7,16 @@ namespace AccProductsEnt.Kuriev.Service
     {
         public void AddProduct (Product newProduct);
 
-        public void RemoveProduct (string productName);
+        public void RemoveProduct (int productId);
 
-        public void UpdateProduct (string productName,Product newProduct);
+        public void UpdateProduct (int productId,Product newProduct);
 
         public List<Product> GetProduct (string productName);
         public List<Product> SortProductName();
         public List<Product> SortPriceProduct();
         public List<Product> SortDateManufactureProduct();
         public List<Product> GetAllProducts ();
+        public IEnumerable<Product> GetProductsById(int productId);
+
     }
 }

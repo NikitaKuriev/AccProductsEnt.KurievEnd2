@@ -1,13 +1,14 @@
 using AccProductsEnt.Kuriev.Entities.DTO;
 using AccProductsEnt.Kuriev.Entities;
-using AccProductsEnt.Kuriev.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Security.Policy;
+using AccProductsEnt.Kuriev.Service;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AccProductsEnt.Kuriev.Pages
 {
-    public class AddProductModel : PageModel
+    public class UpdateProductModel : PageModel
     {
         private readonly IProductService _productService;
         private readonly IWorkshopService _workshopService;
@@ -15,21 +16,7 @@ namespace AccProductsEnt.Kuriev.Pages
         private readonly IAccountingService _accountingService;
         private readonly IImplementationsService _implementationsService;
 
-
-
-        [BindProperty]
-        public IEnumerable<Product> Products { get; set; }
-
-
-        [BindProperty]
-        public InputProduct Input { get; set; }
-
-        public List<SelectListItem> WorkshopItems { get; set; }
-        public List<SelectListItem> StorageItems { get; set; }
-        public List<SelectListItem> AccoutingItems { get; set; }
-        public List<SelectListItem> ImplementationItems { get; set; }
-
-        public AddProductModel(IProductService productService,
+        public UpdateProductModel(IProductService productService,
             IWorkshopService workshopService,
             IStorageService storageService,
             IAccountingService accountingService,
@@ -45,6 +32,25 @@ namespace AccProductsEnt.Kuriev.Pages
             LoadAccouting();
             LoadImplementation();
         }
+
+        [BindProperty]
+        public InputProduct InputProduct { get; set; }
+
+        public IEnumerable<Product> ProductsId { get; set; }
+       
+
+        public int Id { get; set; }
+
+
+        public List<SelectListItem> WorkshopItems { get; set; }
+        public List<SelectListItem> StorageItems { get; set; }
+        public List<SelectListItem> AccoutingItems { get; set; }
+        public List<SelectListItem> ImplementationItems { get; set; }
+
+
+
+        public int IdProduct { get; set; }  
+
         private void LoadWorkshop()
         {
             List<Workshop> workshops = _workshopService.GetAllWorkshop();
@@ -90,32 +96,44 @@ namespace AccProductsEnt.Kuriev.Pages
             ImplementationItems.Insert(0, new SelectListItem { Value = "0", Text = "Отсутствует" });
         }
 
+      
         public void OnGet()
         {
-            Products = _productService.GetAllProducts();
+            ProductsId = _productService.GetProductsById(Id);
+        }
+        
+
+        public void OnPost() 
+        {
+            ProductsId = _productService.GetProductsById(IdProduct);
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPostEditProduct(int id)
         {
-            if (!ModelState.IsValid)
-                return Page();
 
-            var product = new Product
+            ProductsId = _productService.GetProductsById(id);
+            return Page();
+        }
+
+        public IActionResult OnPostEdit(int id)
+        {
+
+            var product = new Product()
             {
-                Description = Input.Description,
-                ProductName = Input.ProductName,
-                Quantity = Input.Quantity,
-                DateOfManufacture = Input.DateOfManufacture,
-                PricePerPiece = Input.PricePerPiece,
-                ImgPath = Input.ImgPath,
-                WorkshopId = Input.SelectValueListWorkshop,
-                StorageId = Input.SelectValueListStorage,
-                AccountingId = Input.SelectValueListAccounting,
-                ImplementationId = Input.SelectValueListImplementation
+                Description = InputProduct.Description,
+                ProductName = InputProduct.ProductName,
+                Quantity = InputProduct.Quantity,
+                DateOfManufacture = InputProduct.DateOfManufacture,
+                PricePerPiece = InputProduct.PricePerPiece,
+                ImgPath = InputProduct.ImgPath,
+                WorkshopId = InputProduct.SelectValueListWorkshop,
+                StorageId = InputProduct.SelectValueListStorage,
+                AccountingId = InputProduct.SelectValueListAccounting,
+                ImplementationId = InputProduct.SelectValueListImplementation
             };
 
-
-            _productService.AddProduct(product);
+            _productService.UpdateProduct(Id, product);
+            ProductsId = _productService.GetAllProducts();
             return RedirectToPage("Product");
         }
     }

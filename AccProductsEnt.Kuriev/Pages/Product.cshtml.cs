@@ -19,8 +19,10 @@ namespace AccProductsEnt.Kuriev.Pages
 
 
         [BindProperty]
-        public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<Product> Products { get; set; }    
 
+        [BindProperty]
+        public InputProduct InputProduct { get; set; }
 
         [BindProperty]
         public InputProduct Input { get; set; }
@@ -105,25 +107,13 @@ namespace AccProductsEnt.Kuriev.Pages
 
         public IActionResult OnPost()
         {
-            //var product = new Product
-            //{
-            //    Description = Input.Description,
-            //    ProductName = Input.ProductName,
-            //    Quantity = Input.Quantity,
-            //    DateOfManufacture = Input.DateOfManufacture,
-            //    PricePerPiece = Input.PricePerPiece,
-            //    ImgPath = Input.ImgPath,
-            //    WorkshopId = Input.SelectValueListWorkshop,
-            //    StorageId = Input.SelectValueListStorage,
-            //    AccountingId = Input.SelectValueListAccounting,
-            //    ImplementationId = Input.SelectValueListImplementation
-            //};
-
-
-            //_productService.AddProduct(product);
+         
             return Page();
         }
-
+        public IActionResult OnPostUpdate(int id)
+        {
+            return RedirectToPage("UpdateProduct");
+        }
         public IActionResult OnPostSearchProduct()
         {
             Products = _productService.GetProduct(SearchProduct);
@@ -153,6 +143,12 @@ namespace AccProductsEnt.Kuriev.Pages
 
                 default: return Page();
             }
+        }
+        public IActionResult OnPostDelete(int id)
+        {
+            _productService.RemoveProduct(id);
+            Products = _productService.GetAllProducts();
+            return Page();
         }
     }
 

@@ -1,0 +1,62 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.UpdateProductModel
+@{
+}
+<h3>Измениение продукта</h3>
+
+@foreach( var item in Model.ProductsId)
+{
+    <form method="post" asp-page-handler="Edit" >
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.ProductName" class="col-sm-2 col-form-label"></label>
+            <input asp-for="InputProduct.ProductName" class="form-control" value="@item.ProductName" id="product-edit-productname" />
+            <span asp-validation-for="InputProduct.ProductName" style="color:darkred"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.Description" class="col-sm-2 col-form-label"></label>
+            <input asp-for="InputProduct.Description" class="form-control" value="@item.Description" id="product-edit-description" />
+            <span asp-validation-for="InputProduct.Description" style="color:darkred"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.DateOfManufacture" class="col-sm-2 col-form-label"></label>
+            <input asp-for="InputProduct.DateOfManufacture" class="form-control" value="@item.DateOfManufacture" id="inputTitle" />
+            <span asp-validation-for="InputProduct.DateOfManufacture" style="color:darkred"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.Quantity" class="col-sm-2 col-form-label"></label>
+            <input asp-for="InputProduct.Quantity" class="form-control" value="@item.Quantity" id="inputTitle" />
+            <span asp-validation-for="InputProduct.Quantity" style="color:darkred"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.PricePerPiece" class="col-sm-2 col-form-label"></label>
+            <input asp-for="InputProduct.PricePerPiece" class="form-control" value="@item.PricePerPiece" id="inputTitle" />
+            <span asp-validation-for="InputProduct.PricePerPiece" style="color:darkred"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.ImgPath" class="col-sm-2 col-form-label"></label>
+            <input asp-for="InputProduct.ImgPath" class="form-control" value="@item.ImgPath" id="inputTitle" />
+            <span asp-validation-for="InputProduct.ImgPath" style="color:darkred"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.SelectValueListStorage"></label>
+            <select class="mt-2" asp-for="InputProduct.SelectValueListStorage"asp-items="Model.StorageItems"></select>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.SelectValueListAccounting"></label>
+            <select class="mt-2" asp-for="InputProduct.SelectValueListAccounting" asp-items="Model.AccoutingItems"></select>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.SelectValueListWorkshop"></label>
+            <select class="mt-2" asp-for="InputProduct.SelectValueListWorkshop" asp-items="Model.ImplementationItems"></select>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="InputProduct.SelectValueListImplementation"></label>
+            <select class="mt-2" asp-for="InputProduct.SelectValueListImplementation" asp-items="Model.ImplementationItems"></select>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn-secondary">Сохранить</button>
+        </div>
+    </form>
+}
+

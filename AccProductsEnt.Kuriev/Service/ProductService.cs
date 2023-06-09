@@ -1,5 +1,6 @@
 ﻿using AccProductsEnt.Kuriev.Data;
 using AccProductsEnt.Kuriev.Entities;
+using Microsoft.CodeAnalysis;
 
 namespace AccProductsEnt.Kuriev.Service
 {
@@ -31,10 +32,18 @@ namespace AccProductsEnt.Kuriev.Service
                 .ToList() ;
         }
 
-        public void RemoveProduct(string productName)
+
+        public IEnumerable<Product> GetProductsById(int productId)
+        {
+            return _context.Products
+                .Where(pr => pr.IsDeleted == false && pr.Id == productId)
+                .ToList();
+        }
+
+        public void RemoveProduct(int productId)
         {
             var products = _context.Products
-                .Where(product => product.ProductName == productName)
+                .Where(product => product.Id == productId)
                 .FirstOrDefault();
             products.IsDeleted = true;
             _context.SaveChanges();
@@ -66,12 +75,14 @@ namespace AccProductsEnt.Kuriev.Service
             .ToList();
         }
 
-        public void UpdateProduct(string productName, Product newProduct) 
+        public void UpdateProduct(int idProduct, Product newProduct) 
         {
             var products = _context.Products
-                .Where(product => product.ProductName == productName)
+                .Where(product => product.Id == idProduct)
                 .FirstOrDefault();
-            products = newProduct;
+            products.IsDeleted = true;
+
+            _context.Products.Add(newProduct);
             _context.SaveChanges();
         }
 
