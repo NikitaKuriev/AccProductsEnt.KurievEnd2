@@ -51,7 +51,7 @@
                 <p><strong>Цена за шт: </strong>@item.PricePerPiece</p>
                 <p><strong>Дата производства: </strong>@item.DateOfManufacture.ToShortDateString()</p>
                 <form method="post" asp-route-id="@item.Id" asp-page="UpdateProduct" asp-page-handler="EditProduct">
-                    <button type="submit" class="position-absolute btn">
+                    <button type="submit" class="position-absolute btn" style="bottom:3%; right:2%">
                         <img src="~/images/edit.png" />
                     </button>
                 </form>

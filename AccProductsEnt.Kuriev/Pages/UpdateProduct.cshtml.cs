@@ -99,13 +99,11 @@ namespace AccProductsEnt.Kuriev.Pages
       
         public void OnGet()
         {
-            ProductsId = _productService.GetProductsById(Id);
         }
         
 
         public void OnPost() 
         {
-            ProductsId = _productService.GetProductsById(IdProduct);
         }
 
         public IActionResult OnPostEditProduct(int id)
@@ -117,6 +115,8 @@ namespace AccProductsEnt.Kuriev.Pages
 
         public IActionResult OnPostEdit(int id)
         {
+            if (!ModelState.IsValid)
+                return Page();
 
             var product = new Product()
             {
@@ -132,7 +132,7 @@ namespace AccProductsEnt.Kuriev.Pages
                 ImplementationId = InputProduct.SelectValueListImplementation
             };
 
-            _productService.UpdateProduct(Id, product);
+            _productService.UpdateProduct(id, product);
             ProductsId = _productService.GetAllProducts();
             return RedirectToPage("Product");
         }
