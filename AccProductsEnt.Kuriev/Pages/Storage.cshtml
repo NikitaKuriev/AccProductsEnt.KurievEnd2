@@ -1,0 +1,24 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.StorageModel
+@{
+}
+<h3 class="mb-3">Добавление склада:</h3>
+
+<form  method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.StorageName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.StorageName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.StorageName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.ReseiptDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.ReseiptDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.ReseiptDate" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectedValueAccoundCard"></label>
+        <select class="mt-2" asp-for="InputModel.SelectedValueAccoundCard" asp-items="Model.AccoundCardItems"></select>
+    </div>
+    
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

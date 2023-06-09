@@ -1,0 +1,19 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.AccountingModel
+@{
+}
+<h3 class="mb-3">Бухгалтерия:</h3>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.WaybillId" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.WaybillId" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.WaybillId" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.PriceProduct" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.PriceProduct" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.PriceProduct" style="color:darkred"></span>
+    </div>
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

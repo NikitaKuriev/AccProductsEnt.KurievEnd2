@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Топаз-Сервис</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AccProductsEnt.Kuriev.styles.css" asp-append-version="true" />
+</head>
+<body style=" background-color:#efefef;">
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  box-shadow mb-3 " style="background-color:#efefef;">
+            <div class="container-fluid" style="background-color:#B0C4DE; margin-top:-10px">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between p-5 text-center">
+                    <div class="row">
+                        <div class="col-2">
+                            <a asp-page="Index">
+                                <img src="/images/TOPAZ3.png" class="img-fluid " alt="Topaz" style="">
+                            </a>
+                        </div>
+                        <div class="col-10">
+
+                            <ul class="navbar-nav flex-grow-1 " style="text-decoration:none; margin-left:26%;">
+                                <li class="nav-item  ">
+                                    <a class="nav-link text-dark  fw-bolder fs-4" style="margin-left:60px bor" asp-area="" asp-page="/Product">Изделия</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark  fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Raw">Сырье</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark  fw-bolder fs-4 " style="margin-left:60px; " asp-area="" asp-page="/Staff">Сотрудники</a>
+                                </li>
+                            </ul>
+                            @if (User.IsInRole("Администратор"))
+                            {
+                                <ul class="navbar-nav flex-grow-1" style="margin-left:4%" >
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark fw-bolder fs-4 " style="" asp-area="" asp-page="/Storage">Склад</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4 ms-1" style="" asp-area="" asp-page="/AccountCard">Карточка Учета</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4 ms-1" style="" asp-area="" asp-page="/Accounting">Бухгалтерия</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4 ms-1" style="" asp-area="" asp-page="/Provider">Поставщик</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark fw-bolder fs-4 ms-1" style="" asp-area="" asp-page="/Workshop">Цех</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4 ms-1" style="" asp-area="" asp-page="/Implementations">Реализация</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4 ms-1" style="" asp-area="" asp-page="/Post">Должность</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4" style="" asp-area="" asp-page="/Client">Клиент</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4" style="" asp-area="" asp-page="/PriceList">Прейскурант цен</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark  fw-bolder fs-4" style="" asp-area="" asp-page="/Order">Заказ</a>
+                                    </li>
+                                </ul>
+
+                            }
+                        </div>
+                        
+                    </div>
+                    <div class="position-absolute fs-3" style="top:0%; right:5%;">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted container-fluid position-absolute end-10 top-95 fixed-bottom ">
+        <div class="container-fluid" style="top:-150px">
+            &copy; 2023 - AccProductsEnt.Kuriev - <a asp-area="" asp-page="/Privacy">Топаз-Сервис</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

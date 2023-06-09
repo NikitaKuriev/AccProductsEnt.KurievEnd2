@@ -1,0 +1,53 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.AddProductModel
+@{
+}
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Input.ProductName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Input.ProductName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="Input.ProductName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.Description" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Input.Description" class="form-control" id="inputTitle" />
+        <span asp-validation-for="Input.Description" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.DateOfManufacture" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Input.DateOfManufacture" class="form-control" id="inputTitle" />
+        <span asp-validation-for="Input.DateOfManufacture" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.Quantity" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Input.Quantity" class="form-control" id="inputTitle" />
+        <span asp-validation-for="Input.Quantity" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.PricePerPiece" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Input.PricePerPiece" class="form-control" id="inputTitle" />
+        <span asp-validation-for="Input.PricePerPiece" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.ImgPath" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Input.ImgPath" class="form-control" id="inputTitle" />
+        <span asp-validation-for="Input.ImgPath" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.SelectValueListStorage"></label>
+        <select class="mt-2" asp-for="Input.SelectValueListStorage" asp-items="Model.StorageItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.SelectValueListAccounting"></label>
+        <select class="mt-2" asp-for="Input.SelectValueListAccounting" asp-items="Model.AccoutingItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.SelectValueListWorkshop"></label>
+        <select class="mt-2" asp-for="Input.SelectValueListWorkshop" asp-items="Model.WorkshopItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Input.SelectValueListImplementation"></label>
+        <select class="mt-2" asp-for="Input.SelectValueListImplementation" asp-items="Model.ImplementationItems"></select>
+    </div>
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

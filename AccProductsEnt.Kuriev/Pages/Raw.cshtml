@@ -1,0 +1,89 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.RawModel
+@{
+}
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.RawName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.RawName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.RawName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.Quantity" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.Quantity" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.Quantity" style="color:darkred"></span>
+    </div>
+     <div class="form-group mb-3">
+        <label asp-for="InputRaw.PriceRaw" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.PriceRaw" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.PriceRaw" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.ReceiptDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.ReceiptDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.ReceiptDate" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.SelectProviderItem"></label>
+        <select class="mt-2" asp-for="InputRaw.SelectProviderItem" asp-items="Model.SelectProviderItems"></select>
+    </div>
+
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>
+@*<div class="row">
+    <div class="container-fluid justify-content-start p-5 col  height:100%" style="width:100%; height:100%;" >
+
+        <h1 class="display-3 fs-1  " style="font-weight:500 "> Компания использует высококачественное сырье</h1>
+        <h1 class="display-3 fs-2  " style="font-weight:500 ">   Для производства надежных ТРК и использования на АЗС</h1>
+        <h1 class="display-3 fs-2  " style="font-weight:500 "> Все топливораздаточные колонки состоят из таких элементов:</h1>
+         <ul style="left:3%;">
+            <li>
+                <h1 class="display-3 fs-3 " style="font-weight:500 "> Насос;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-3  " style="font-weight:500 "> Фильтры глубокой и тонкой очистки;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-3 " style="font-weight:500 "> Пистолет и шланг для раздачи;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-3 " style="font-weight:500 "> Газоотделитель;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-3 " style="font-weight:500 "> Измеритель объёма;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-3 " style="font-weight:500 "> Счётчик топлива;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-3 " style="font-weight:500 "> Отсчётный прибор.</h1>
+            </li>
+        </ul>
+
+        <img src="/images/kolonka.jpg" class="img-fluid" alt="topazz" style="">
+    </div>
+
+    <div class="col">
+
+        <h1 class="display-3 fs-1 mt-3 " style="font-weight:500 "> Характеристики топливораздаточных колонок</h1>
+        <h1 class="display-3 fs-2 mt-4 " style="font-weight:500 "> Компания «Топаз-Сервис» предлагает разные виды оборудования для заправок. Выбор модели основывается на пропускной способности АЗС, мобильности, автоматизации процессов и многих других факторах.</h1>
+        <h1 class="display-3 fs-2 mt-4 " style="font-weight:500 ">  Топливораздаточные колонки, исходя из предъявляемых к ним требованиям, классифицируются по таким параметрам:</h1>
+
+        <ul>
+            <li>
+                <h1 class="display-3 fs-4 mt-2 " style="font-weight:500 "> Тип привода. Вариантов три – ручной, электрический и комбинированный. Первый вид почти не используется, так как неудобный в эксплуатации;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-4 mt-2 " style="font-weight:500 "> Способ управления. Может быть ручной режим, от местного или дистанционно задающего прибора. При первом варианте подача топлива автоматически не останавливается. Местное управление подразумевает, что клиент сам выбирает нужный объём, а дистанционное – установку необходимого значения оператором;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-4 mt-2 " style="font-weight:500 "> Расход топлива. Максимальное значение – 160 литров в минуту;</h1>
+            </li>
+            <li>
+                <h1 class="display-3 fs-4 mt-2 " style="font-weight:500 "> Способ размещения. Элементы ТРК могут быть в одном или нескольких корпусах.</h1>
+            </li>
+        </ul>
+
+        <img src="/images/topzkolonka.jpg" class="img-fluid mt-3" alt="topazz" style="margin-left:100px">
+    </div>
+</div>*@

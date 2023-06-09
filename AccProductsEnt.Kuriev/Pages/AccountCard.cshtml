@@ -1,0 +1,34 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.AccountCardModel
+@{
+}
+<h3 class="mb-3">Добавление карточки учета:</h3>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Name" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Name" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Name" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.ReseiptDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.ReseiptDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.ReseiptDate" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.ImplementationDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.ImplementationDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.ImplementationDate" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Implemented" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Implemented" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Implemented" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Remainder" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Remainder" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Remainder" style="color:darkred"></span>
+    </div>
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

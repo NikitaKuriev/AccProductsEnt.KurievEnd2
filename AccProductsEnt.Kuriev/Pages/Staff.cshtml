@@ -1,0 +1,49 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.StaffModel
+@{
+}
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.FullName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.FullName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.FullName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Experience" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Experience" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Experience" style="color:darkred"></span>
+    </div> 
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Wage" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Wage" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Wage" style="color:darkred"></span>
+    </div> 
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Address" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Address" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Address" style="color:darkred"></span>
+    </div> 
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Phone" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Phone" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Phone" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListWorkshop"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListWorkshop" asp-items="Model.WorkshopItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListStorage"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListStorage" asp-items="Model.StorageItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListAccounting"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListAccounting" asp-items="Model.AccoutingItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListImplementation"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListImplementation" asp-items="Model.ImplementationItems"></select>
+    </div>
+
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

@@ -1,0 +1,29 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.ProviderModel
+@{
+}
+<h3 class="mb-3">Добавление поставщика:</h3>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.FullName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.FullName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.FullName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.TIN" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.TIN" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.TIN" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Address" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Address" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Address" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.NameOfSuppliedRaw" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.NameOfSuppliedRaw" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.NameOfSuppliedRaw" style="color:darkred"></span>
+    </div>
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

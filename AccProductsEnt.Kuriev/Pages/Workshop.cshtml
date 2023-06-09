@@ -1,0 +1,24 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.WorkshopModel
+@{
+}
+<h3 class="mb-3">Добавление ЦЕХа:</h3>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.WorkshopName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.WorkshopName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.WorkshopName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.ProccesName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.ProccesName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.ProccesName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectlistRawItem"></label>
+        <select class="mt-2" asp-for="InputModel.SelectlistRawItem" asp-items="Model.RawItems"></select>
+    </div>
+
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

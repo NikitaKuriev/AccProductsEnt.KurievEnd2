@@ -1,0 +1,24 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.PostModel
+@{
+}
+<h3 class="mb-3">Добавление должности:</h3>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.PostTitle" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.PostTitle" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.PostTitle" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.JobResponsibilities" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.JobResponsibilities" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.JobResponsibilities" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListStaff"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListStaff" asp-items="Model.StaffItems"></select>
+    </div>
+
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>

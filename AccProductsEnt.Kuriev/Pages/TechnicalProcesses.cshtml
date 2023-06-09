@@ -1,0 +1,32 @@
+﻿@*@page
+@model AccProductsEnt.Kuriev.Pages.TechnicalProcessesModel
+@{
+}
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.RawName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.RawName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.RawName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.Quantity" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.Quantity" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.Quantity" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.PriceRaw" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.PriceRaw" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.PriceRaw" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.ReceiptDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.ReceiptDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.ReceiptDate" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.SelectProviderItem"></label>
+        <select class="mt-2" asp-for="InputRaw.SelectProviderItem" asp-items="Model.SelectProviderItems"></select>
+    </div>
+
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>*@

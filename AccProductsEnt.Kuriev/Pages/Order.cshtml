@@ -1,0 +1,37 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.OrderModel
+@{
+}
+<h3 class="mb-3">Добавление заказа:</h3>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Name" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Name" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Name" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.Quantity" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Quantity" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Quantity" style="color:darkred"></span>
+    </div>
+     <div class="form-group mb-3">
+        <label asp-for="InputModel.OrdersDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.OrdersDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.OrdersDate" style="color:darkred"></span>
+    </div>
+     <div class="form-group mb-3">
+        <label asp-for="InputModel.Cost" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputModel.Cost" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputModel.Cost" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListImplementation"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListImplementation" asp-items="Model.ImplementationItems"></select>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputModel.SelectValueListClient"></label>
+        <select class="mt-2" asp-for="InputModel.SelectValueListClient" asp-items="Model.ClientItems"></select>
+    </div>
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>
