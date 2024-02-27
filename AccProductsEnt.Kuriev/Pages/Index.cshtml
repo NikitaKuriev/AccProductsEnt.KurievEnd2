@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 <div class="row">
-    <div class="container-fluid justify-content-start p-5 col  height:100%" style="width:100%; height:100%; ">
+    <div class="container-fluid justify-content-start p-5 col  height:100% border border-primary" style="width:100%; height:100%; ">
 
         <h1 class="display-3 fs-1  " style="font-weight:500 "> Компания производит продукцию:</h1>
         <h1 class="display-3 fs-2  " style="font-weight:500 "> Для предприятий автозаправочного комплекса</h1>
@@ -23,15 +23,39 @@
         <h1 class="display-3 fs-3 mt-3 " style="font-weight:400 "> Использование комплектующих ведущих фирм, контроль на этапе производства, проведение приёмосдаточных испытаний обеспечивают высокий уровень качества и надежности оборудования.</h1>
         <h1 class="display-3 fs-3 mt-3 " style="font-weight:400 "> Программное обеспечение разрабатывается с учетом специфики изделий и опыта их эксплуатации. Оптимальное соотношение цены и качества, широкий ассортимент, длительный гарантийный срок эксплуатации, постгарантийное сопровождение продукции.</h1>
         <h1 class="display-3 fs-3 mt-3 " style="font-weight:500 ">"Топаз" обеспечат успех нашего сотрудничества! </h1>
-        <img src="/images/Papa.jpg" class="img-fluid" alt="topazz" style="">
-        <div style=" position:absolute; top:69%; left:6.5%; height:50px; width:50px; " href="https://vk.com/id610315283">
-            <a href="https://vk.com/id610315283" class="stretched-link"></a>
+        
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/topazOneSlayd.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/topazSecondSlayd.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/topazThirstSlayd.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
         </div>
 
     </div>
     <div class="col">
-            <img src="/images/company.jpg" class="img-fluid " alt="Topaz" style="">
-            <img src="/images/footerphoto.png" class="img-fluid" alt="topaz" style=" width:100%; height:auto;">
+        <img src="/images/company.jpg" class="img-fluid border border-primary " alt="Topaz" style="">
+        <img src="/images/footerphoto.png" class="img-fluid border border-primary" alt="topaz" style=" width:100%; height:auto;">
             <h1 class="display-3 fs-1" style="font-weight:500">Структура предприятия</h1>
             <h1 class="display-3 fs-2 mt-3" style="font-weight:500">Основными звеньями производственного цикла в структуре предприятия являются:</h1>
         <ul>
