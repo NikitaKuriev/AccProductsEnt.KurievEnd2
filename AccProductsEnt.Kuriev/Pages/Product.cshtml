@@ -4,14 +4,14 @@
 }
 <div class="row  ">
     <div class="col">
-        <a class="btn mb-2 " style="background-color:#7796bf; color:white" asp-page="AddProduct">Добавить изделие</a>
+        <a class="btn btn-outline-primary " style=" " asp-page="AddProduct">Добавить изделие</a>
     </div>
     <div class="col ">
         <form asp-page-handler="SearchProduct">
             <div class="input-group mb-3 m">
                 <input type="text" class="form-control" asp-for="@Model.SearchProduct" placeholder="Введите название изделия" aria-label="Search">
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-outline-secondary w-100 ms-2">Найти</button>
+                    <button type="submit" class="btn btn-outline-primary w-100 ms-2">Найти</button>
                 </div>
             </div>
         </form>
@@ -24,7 +24,7 @@
                 <option value="3"><button type="submit">По цене</button></option>
                 <option value="4"><button type="submit">По дате производства</button></option>
             </select>
-            <button type="submit" class="btn btn-secondary" style="position:absolute;background-color:#7796bf; top:1%; left:25%">Отсортировать</button>
+            <button type="submit" class="btn btn-outline-primary" style="position:absolute; top:1%; left:25%">Отсортировать</button>
         </form>
     </div>
 

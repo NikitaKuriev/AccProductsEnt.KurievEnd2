@@ -1,0 +1,13 @@
+﻿@page
+@model AccProductsEnt.Kuriev.Pages.ProductCartModel
+@{
+}
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.ImgPath" alt="@Model.ProductId" />
+    <h2>@Model.ProductName</h2>
+    <p>@Model.Description</p>
+    <p>Цена: @Model.PricePerPiece</p>
+    <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+
+</div>
