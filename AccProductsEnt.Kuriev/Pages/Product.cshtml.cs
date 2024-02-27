@@ -16,6 +16,8 @@ namespace AccProductsEnt.Kuriev.Pages
         private readonly IAccountingService _accountingService;
         private readonly IImplementationsService _implementationsService;
 
+
+
         [BindProperty]
         public IEnumerable<Product> Products { get; set; }    
 
