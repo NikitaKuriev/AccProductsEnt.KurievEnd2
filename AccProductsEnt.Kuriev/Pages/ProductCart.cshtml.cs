@@ -1,5 +1,7 @@
+using AccProductsEnt.Kuriev.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NuGet.Protocol.Core.Types;
 
 namespace AccProductsEnt.Kuriev.Pages
 {
@@ -18,5 +20,15 @@ namespace AccProductsEnt.Kuriev.Pages
         public void OnGet()
         {
         }
+
+        //public IActionResult OnPost(long productId, string returnUrl, int quantity)
+        //{
+        //    Product? product = products.FirstOrDefault(p => p.ProductID == productId);
+        //    if (product != null)
+        //    {
+        //        Cart?.AddItem(product, quantity);
+        //    }
+        //    return RedirectPermanent(returnUrl);
+        //}
     }
 }
